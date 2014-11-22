@@ -1,0 +1,51 @@
+// Place all the styles related to the Calculator controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* CSE 3901 Lab 4 Part 2 - Calculator
+   Stylesheet */
+
+div#grp { /* div that encompases everything */
+    width: 350px;
+    height: 400px;
+    background-color: lightgrey;
+    border-radius: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+table {
+    margin: auto;
+}
+
+tr, td { /* Remove borders and extra space */
+    border-collapse: collapse;
+    border: 0;
+    padding: 0px;
+    margin: 0px;
+}
+
+button { /* Set button size so they're all the same... */
+    width: 60px;
+    font-size: 25px;    
+}
+
+button#ent { /* ...except the enter... */
+    height: 76px;
+}
+
+button#nil { /* ...and 0 buttons */
+    width: 100%; /* Fills two rows */
+}
+
+input { /* Box that displays numbers and results */
+    width: 300px;
+    font-size: 25px;
+    text-align: right;
+    background: white;
+    border-radius: 5px;
+}
+
+p { /* Sets the size of "By ... " signature at the bottom */
+    font-size: 12px;
+}

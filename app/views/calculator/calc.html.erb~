@@ -1,0 +1,52 @@
+<body>
+  <div class="container"><div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6" id="grp">
+      <br>
+      <br>
+      <br>
+      <h1>Calculator</h1>
+      <div>
+	<input readonly="readonly" size="16" id="in" />
+	<table>
+	  <tr>
+	    <td><button type="button" id="mc" name="mem">MC</button></td>
+	    <td><button type="button" id="mr" name="mem">MR</button></td>
+	    <td id="ind"><button type="button" id="ms" name="mem">MS</button></td>
+	    <td><button type="button" id="m+" name="mem">M+</button></td>
+	    <td><button type="button" id="m-" name="mem">M-</button></td>
+	  </tr>
+	  <tr>
+	    <td><button type="button" id="7" name="num">7</button></td>
+	    <td><button type="button" id="8" name="num">8</button></td>
+	    <td><button type="button" id="9" name="num">9</button></td>
+	    <td><button type="button" id="/" name="op">/</button></td>
+	    <td><button type="button" id="c" name="clr">C</button></td>
+	  </tr>
+	  <tr>
+	    <td><button type="button" id="4" name="num">4</button></td>
+	    <td><button type="button" id="5" name="num">5</button></td>
+	    <td><button type="button" id="6" name="num">6</button></td>
+	    <td><button type="button" id="*" name="op">*</button></td>
+	    <td><button type="button" id="ce" name="clr">CE</button></td>
+	  </tr>
+	  <tr>
+	    <td><button type="button" id="1" name="num">1</button></td>
+	    <td><button type="button" id="2" name="num">2</button></td>
+	    <td><button type="button" id="3" name="num">3</button></td>
+	    <td><button type="button" id="-" name="op">-</button></td>
+	    <td rowspan="2"><button type="button" id="ent">=</button></td>
+	  </tr>
+	  <tr>
+	    <td colspan="2"><button type="button" name="num" id="nil">0</button></td>
+	    <td><button type="button" id=".">.</button></td>
+	    <td><button type="button" id="+" name="op">+</button></td>
+	  </tr>
+	</table>
+      </div>
+    </div>
+<div class="col-md-3"></div>
+    </div>
+    
+  </div></div> <!-- container -->
+</body>
