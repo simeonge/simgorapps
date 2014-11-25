@@ -1,7 +1,15 @@
 Rails.application.routes.draw do
+  get 'portfolio/sudoku'
+
+  get 'portfolio/expense'
+
+  get 'portfolio/interpreter'
+
   get 'about/resume'
 
   get 'about/contact'
+
+  get 'about/portfolio'
 
   get 'welcome/home'
 

@@ -4,4 +4,7 @@ class AboutController < ApplicationController
 
   def contact
   end
+
+  def portfolio
+  end
 end
