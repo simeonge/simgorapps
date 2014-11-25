@@ -1,13 +1,23 @@
-<%= javascript_include_tag 'calculator' %>
+<div class="container">
+  <div class="jumbotron">
+    <h1>Calculator</h1>
+    <h2 class="text-center">Simple calculator implemented in Javascript</h2>
+    <p class="text-center">This project done for a web development class implements a calculator using HTML, CSS, and Javascript.</p>
+    <p class="text-center">
+      <%= link_to 'View source', "https://github.com/simeonge/cse3901lab4/tree/master/calculator", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
+      <a type="button" class="btn btn-lg btn-info">Customize</a>
+    </p>
+  </div>
+</div>
+
   <div class="container"><div class="row">
-    <div class="col-md-3"></div>
-    <div class="col-md-6" id="grp">
-      <br>
-      <br>
+    <div id="grp">
       <br>
       <h1>Calculator</h1>
       <div>
 	<input readonly="readonly" size="16" id="in" />
+        <br>
+	<br>
 	<table>
 	  <tr>
 	    <td><button type="button" id="mc" name="mem">MC</button></td>
@@ -43,9 +53,7 @@
 	    <td><button type="button" id="+" name="op">+</button></td>
 	  </tr>
 	</table>
-      </div>
-    </div>
-<div class="col-md-3"></div>
-    </div>
-    
+      </div> <!-- inner div -->
+    </div> <!-- md 6 div -->
   </div></div> <!-- container -->
+<%= javascript_include_tag 'calculator' %>

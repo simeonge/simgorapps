@@ -7,8 +7,8 @@
 
 div#grp { /* div that encompases everything */
     width: 350px;
-    height: 400px;
-    background-color: lightgrey;
+    height: 380px;
+    background-color: lightgreen;
     border-radius: 10px;
     margin: auto;
     text-align: center;
@@ -27,11 +27,20 @@ tr, td { /* Remove borders and extra space */
 
 button { /* Set button size so they're all the same... */
     width: 60px;
-    font-size: 25px;    
+    font-size: 25px;
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    border: 2px solid #788033;
 }
 
 button#ent { /* ...except the enter... */
-    height: 76px;
+    height: 79px;
+    background-color: orange;
+    border-radius: 5px; 
+    -moz-border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    border: 2px solid #000000;
 }
 
 button#nil { /* ...and 0 buttons */
@@ -48,4 +57,8 @@ input { /* Box that displays numbers and results */
 
 p { /* Sets the size of "By ... " signature at the bottom */
     font-size: 12px;
+}
+
+p a.btn { /* Set padding for buttons */
+    margin: 1em;
 }
