@@ -26,23 +26,17 @@ var decimal = false; // true if dot button is pressed
 // i.e. prevents 5*3*3*3... when an op button is clicked more than once (e.g. - by mistake, then +)
 var reset = true;
 
-// Executes on page load
-var ready = function() {
-    // get buttons
-    nums = document.getElementsByName("num"); // get num buttons
-    mems = document.getElementsByName("mem"); // get memory buttons
-    input = document.getElementById("in"); // get input box
-    ops = document.getElementsByName("op"); // get op buttons
-    clrs = document.getElementsByName("clr"); // get clear buttons
-    ent = document.getElementById("ent"); // get enter button
-    dot = document.getElementById("."); // get dot button
+// get buttons
+nums = document.getElementsByName("num"); // get num buttons
+mems = document.getElementsByName("mem"); // get memory buttons
+input = document.getElementById("in"); // get input box
+ops = document.getElementsByName("op"); // get op buttons
+clrs = document.getElementsByName("clr"); // get clear buttons
+ent = document.getElementById("ent"); // get enter button
+dot = document.getElementById("."); // get dot button
 
-    addlis(nums); // add listeners
-    updateIn(result); // initial update of input box
-};
-
-$(document).ready(ready); // for regular page load
-$(document).on('page:load', ready); // for turbolink
+addlis(nums); // add listeners
+updateIn(result); // initial update of input box
 
 // Add listeners
 function addlis() {
