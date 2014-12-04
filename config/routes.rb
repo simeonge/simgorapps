@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   get 'portfolio/sudoku'
 
+  post 'portfolio/sudoku'
+
   get 'portfolio/expense'
 
   get 'portfolio/interpreter'

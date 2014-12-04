@@ -1,12 +1,29 @@
 <div class="container">
   <div class="jumbotron">
     <h1>Sudoku Solver</h1>
-    <h2>Sudoku Solver written in Ruby.</h2>
+    <h2>Sudoku Solver written in Ruby</h2>
     <br>
-    <p>This class projects is written in Ruby and implements a solver for the Sudoku puzzle using the brute-force algorithm. Please view the Github repository for documentation and source code.</p>
+    <p>This class project is written in Ruby and implements a solver for the Sudoku puzzle using the brute-force algorithm. Please view the Github repository for documentation and source code.</p>
     <p class="text-center">
       <%= link_to 'View source', "https://github.com/simeonge", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
       <a type="button" class="btn btn-lg btn-info" disabled="true">Demo</a>
     </p>
   </div>
+</div>
+<div class="container">
+  <p class="text-center">
+    <%= @solution %>
+  </p>
+  <%= form_tag do %>
+    <p>
+      <%= label_tag "Enter Sudoku puzzle" %><br>
+      <%= text_area_tag :text %>
+    </p>
+  
+    <p>
+      <%= submit_tag "Solve" %>
+    </p>
+  <% end %>
+  <!-- <textarea placeholder="Enter Sudoku puzzle."></textarea>
+  <a type="button" class="btn btn-lg btn-primary">Submit</a> -->
 </div>
