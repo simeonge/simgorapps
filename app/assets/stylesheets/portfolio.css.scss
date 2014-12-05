@@ -1,3 +1,22 @@
 // Place all the styles related to the portfolio controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+td {
+  border: solid 1px;
+}
+
+td div {
+  width: 3em;
+  height: 3em;
+}
+
+table input {
+  width: 1em;
+  /* border: none; */
+}
+
+table {
+  width: 50px;
+}
+
