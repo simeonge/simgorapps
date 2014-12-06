@@ -2,8 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-td {
-  border: solid 1px;
+table div input {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border: none;
+}
+
+table {
+  width: auto !important;
 }
 
 td div {
@@ -11,12 +18,22 @@ td div {
   height: 3em;
 }
 
-table input {
-  width: 1em;
-  /* border: none; */
+/* top border only */
+td.tb {
+  border-top: solid !important;
 }
 
-table {
-  width: 50px;
+/* right border only */
+td.rb {
+  border-right: solid !important;
 }
 
+/* left border only */
+td.lb {
+  border-left: solid !important;
+}
+
+/* bottom border only */
+td.bb {
+  border-bottom: solid !important;
+}
