@@ -1,4 +1,4 @@
-# Sudoku Solver: Given a text file representing an unsolved Sudoku puzzle, solves the puzzle and outputs it using the brute-force algorithm.
+# Sudoku Solver: Given a text representing an unsolved Sudoku puzzle, solves the puzzle and outputs it using the brute-force algorithm.
 # Author: Simeon Georgiev
 
 # Class that acts as a solver for puzzle given in a file
@@ -10,27 +10,11 @@ class SudokuSolver
     @puzzle.fill {|i| i = []} # array of 9 (initially) empty arrays
   end
   
-  # Parses the input file and produces a two-dimensional array representing the puzzle
+  # Parses the input and produces a two-dimensional array representing the puzzle
   def parse!
-    i, line_num = 0, 1
-    begin
-        @puzz_s.split("\n").each do |line| # for each line
-          line.chomp! # remove trailing \n
-          # enforce formatting with abort and regex
-          abort "Invalid file" if line_num > 11
-          if (line_num != 4 && line_num != 8) # skip these lines
-            abort "Invalid file" if line !~ /^([1-9]|\.){3}(\|([1-9]|\.){3}){2}$/
-            # remove | from line, iterate thourgh it and add numbers to array
-            line.gsub!(/\|/, "").each_char {|ch| @puzzle[i].push(ch =~ /\d/ ? ch.to_i : 0)}
-            i += 1 # inc index
-          else
-            abort "Invalid file" if line !~ /^-----------$/
-          end
-          line_num += 1 # inc line number
-        end
-    rescue # if file doesn't exist or can't be read
-      abort "Error opening or reading file!"
-    end
+    abort "Invalid input" if @puzz_s !~ /^([1-9]|\.){81}$/
+    puz_ar = @puzz_s.chomp.split("").map {|num| num =~ /\d/ ? num.to_i : 0}
+    @puzzle.each_index {|lin| @puzzle[lin] = puz_ar[lin * 9, 9]}
     abort "Invalid puzzle" if !valid_puzzle?
   end
   
@@ -41,13 +25,7 @@ class SudokuSolver
 
   # Converts the two-dimensional array to a well-formatted string, ready for output to the console
   def to_s
-    i, j = 0, 0 # counter
-    @puzzle.reduce("") do |st, row| 
-      i += 1; se = i % 3 == 0 && i % 9 != 0 ? "\n-----------------\n" : "\n"
-      st += row.reduce("") { |tx, num|
-        j += 1; sp = j % 3 == 0 && j % 9 != 0 ? "|" : j % 9 == 0 ? "" : " "
-        tx += num.to_s + sp} + se
-    end
+    @puzzle.flatten.join
   end
   
   private # all subsequent methods are private
