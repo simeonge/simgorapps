@@ -4,9 +4,8 @@
 
 var sload = function() {
   $("a#pop").click(function() {
-    console.log($("p#sol").text().trim().charAt(0));
     $("td div input").each(function(index) {
-      this.val($("p#sol").text().trim().charAt(index));
+      $(this).val($("p#sol").text().trim().charAt(index));
     });
   });
 
@@ -17,29 +16,15 @@ var sload = function() {
     });
     $("#puzzle").val(puz);
 
-    // submit to controller via ajax
-/*
-    $.ajax({
-            url: '/portfolio/sudoku',
-             type: "POST",
-             dataType: 'json',
-             puzzle: {mypuz: puz},
-             processData: false,
-            success: function (msg)
-            {
-	      alert("success!");
-            },
-            error: function (xhr, status)
-            {
-	      alert("error!");
-            }
-    });*/
+    // bind ajax events
+    $("#sform").bind("ajax:success", function(xhr, data, status) {
+      $("#sform").append(status);
+    });
+    $("#sform").bind("ajax:error", function(xhr, data, status) {
+      $("sform").append(data);
+    });
 
   });
-};
-
-var tempload = function() {
-  
 };
 
 $(document).ready(sload); // for regular page load

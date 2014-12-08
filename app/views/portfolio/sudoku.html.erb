@@ -12,7 +12,7 @@
 </div>
 <div class="container">
   <h2 class="text-center">Enter sudoku puzzle</h2>
-  <div>
+  <form accept-charset="UTF-8" action="/portfolio/sudoku" data-remote="true" method="post" id="sform">
   <table class="table table-bordered">
     <tbody>
       <tr>
@@ -116,18 +116,17 @@
       </tr>
     </tbody>
   </table>
-  </div>
   <p class="text-center">
-    <a type="button" id="slv" class="btn btn-lg btn-success">Solve!</a>
+    <a type="submit" id="slv" class="btn btn-lg btn-success">Solve!</a>
     <a type="button" id="pop" class="btn btn-lg btn-warning">Populate</a>
   </p>
+  </form>
   <p id="sol" class="text-center">
     <%= @solution %>
   </p>
   
   <%= form_tag do %>
     <p>
-      <%= label_tag "Enter Sudoku puzzle" %><br>
       <%= text_area_tag :puzzle %>
     </p>
   
