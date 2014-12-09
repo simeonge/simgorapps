@@ -9,21 +9,21 @@ var sload = function() {
     });
   });
 
-  $("a#slv").click(function() {
+  // bind ajax events
+  $("#sform").bind("ajax:beforeSend", function(evt, xhr, settings) {
     var puz = "";
     $("td div input").each(function() {
       puz = puz.concat(this.value == "" ? "." : this.value);
     });
     $("#puzzle").val(puz);
-
-    // bind ajax events
-    $("#sform").bind("ajax:success", function(xhr, data, status) {
-      $("#sform").append(status);
+  });
+  $("#sform").bind("ajax:success", function(xhr, data, status) {
+    $("td div input").each(function(index) {
+      $(this).val(data.text().trim().charAt(index));
     });
-    $("#sform").bind("ajax:error", function(xhr, data, status) {
-      $("sform").append(data);
-    });
-
+  });
+  $("#sform").bind("ajax:error", function(xhr, data, status) {
+    $("sform").append("FUCK YOU!!");
   });
 };
 

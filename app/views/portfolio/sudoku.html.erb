@@ -117,15 +117,14 @@
     </tbody>
   </table>
   <p class="text-center">
-    <a type="submit" id="slv" class="btn btn-lg btn-success">Solve!</a>
-    <a type="button" id="pop" class="btn btn-lg btn-warning">Populate</a>
+    <input type="submit" value="Solve!" id="slv" class="btn btn-lg btn-success" />
   </p>
   </form>
   <p id="sol" class="text-center">
     <%= @solution %>
   </p>
   
-  <%= form_tag do %>
+  <form accept-charset="UTF-8" action="/portfolio/sudoku" data-remote="true" method="post" id="sform">
     <p>
       <%= text_area_tag :puzzle %>
     </p>
@@ -133,7 +132,7 @@
     <p>
       <%= submit_tag "Solve" %>
     </p>
-  <% end %>
+  </form>
   <!-- <textarea placeholder="Enter Sudoku puzzle."></textarea>
   <a type="button" class="btn btn-lg btn-primary">Submit</a> -->
 </div>
