@@ -6,13 +6,18 @@
     <p>This class project is written in Ruby and implements a solver for the Sudoku puzzle using the brute-force algorithm. Please view the Github repository for documentation and source code.</p>
     <p class="text-center">
       <%= link_to 'View source', "https://github.com/simeonge", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
-      <a type="button" class="btn btn-lg btn-info" disabled="true">Demo</a>
+      <a type="button" class="btn btn-lg btn-info">Demo</a>
     </p>
   </div>
 </div>
 <div class="container">
-  <h2 class="text-center">Enter sudoku puzzle</h2>
-  <form accept-charset="UTF-8" action="/portfolio/sudoku" data-remote="true" method="post" id="sform">
+  <h2 class="text-center">Choose sudoku puzzle</h2>
+  <p class="text-center">
+    <a type="button" class="btn btn-lg btn-primary">Easy</a>
+    <a type="button" class="btn btn-lg btn-warning">Difficult</a>
+    <a type="button" class="btn btn-lg btn-danger">Edge case</a>
+    <a type="button" class="btn btn-lg btn-info">Clear grid</a>
+  </p>
   <table class="table table-bordered">
     <tbody>
       <tr>
@@ -116,23 +121,10 @@
       </tr>
     </tbody>
   </table>
+  <form accept-charset="UTF-8" action="/portfolio/sudoku" data-remote="true" method="post" id="sform">
   <p class="text-center">
+    <input type="hidden" id="puzzle" name="puzzle" />
     <input type="submit" value="Solve!" id="slv" class="btn btn-lg btn-success" />
   </p>
   </form>
-  <p id="sol" class="text-center">
-    <%= @solution %>
-  </p>
-  
-  <form accept-charset="UTF-8" action="/portfolio/sudoku" data-remote="true" method="post" id="sform">
-    <p>
-      <%= text_area_tag :puzzle %>
-    </p>
-  
-    <p>
-      <%= submit_tag "Solve" %>
-    </p>
-  </form>
-  <!-- <textarea placeholder="Enter Sudoku puzzle."></textarea>
-  <a type="button" class="btn btn-lg btn-primary">Submit</a> -->
 </div>

@@ -7,8 +7,9 @@ class PortfolioController < ApplicationController
       @solver.solve!
       @solution = @solver.to_s
       # return solution as json
+      output = {'sl' => @solution}.to_json
       respond_to do |format|
-        format.json { render json: @solution }
+        format.json { render json: output }
       end
     end
   end
