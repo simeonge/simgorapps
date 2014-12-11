@@ -1,13 +1,16 @@
 class PortfolioController < ApplicationController
   def sudoku
-    @solution = ""
     if request.post?
       @solver = SudokuSolver.new params[:puzzle]
-      @solver.parse!
-      @solver.solve!
-      @solution = @solver.to_s
+      begin
+        @solver.parse!
+        @solver.solve!
+      rescue
+        puts "oeriohe"
+      end
+
       # return solution as json
-      output = {'sl' => @solution}.to_json
+      output = {'sl' => @solver.to_s, 'er' => @solver.errorm}.to_json
       respond_to do |format|
         format.json { render json: output }
       end

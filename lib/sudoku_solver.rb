@@ -3,19 +3,28 @@
 
 # Class that acts as a solver for puzzle given in a file
 class SudokuSolver
+  attr_reader :errorm
+
   # initialize puzzle array
   def initialize puzzle_text
     @puzz_s = puzzle_text # get string with puzzle
     @puzzle = Array.new 9 # array of size 9
     @puzzle.fill {|i| i = []} # array of 9 (initially) empty arrays
+    @errorm = ""
   end
   
   # Parses the input and produces a two-dimensional array representing the puzzle
   def parse!
-    abort "Invalid input" if @puzz_s !~ /^([1-9]|\.){81}$/
+    if @puzz_s !~ /^([1-9]|\.){81}$/
+      @errorm = "Invalid puzzle!"
+      abort "Invalid input"
+    end
     puz_ar = @puzz_s.chomp.split("").map {|num| num =~ /\d/ ? num.to_i : 0}
     @puzzle.each_index {|lin| @puzzle[lin] = puz_ar[lin * 9, 9]}
-    abort "Invalid puzzle" if !valid_puzzle?
+    if !valid_puzzle?
+      @errorm = "Invalid puzzle!"
+      abort "Invalid input"
+    end
   end
   
   # Solves the sudoku puzzle
@@ -136,11 +145,11 @@ class SudokuSolver
 
   # Returns true if initial puzzle is valid, false otherwise
   def valid_puzzle?
-    valid = false
+    valid = true
     # check rows for duplicates
     @puzzle.each do |row|
       te = row.reject {|num| num == 0} # remove zeroes
-      valid = te.uniq.size == te.size # not valid if there are dupes
+      valid = false if te.uniq.size != te.size # not valid if there are dupes
     end
 
     # check columns for duplicates
@@ -148,7 +157,7 @@ class SudokuSolver
       col = [] # column
       @puzzle.each {|row| col << row[i]} # fill column
       col.reject! {|num| num == 0} # remove zeroes
-      valid = col.uniq.size == col.size # check dupes
+      valid = false if col.uniq.size != col.size # check dupes
     end
 
     # check boxes for duplicates
@@ -165,50 +174,9 @@ class SudokuSolver
 
     puz.each do |box| # for all boxes
       box.reject! {|num| num == 0} # remove zeroes
-      valid = box.uniq.size == box.size # check dupes
+      valid = false if box.uniq.size != box.size # check dupes
     end
 
     return valid
   end
-
-  # More robust solved method, checks all rows, cols, and boxs for dupes
-=begin
-  # Return true if puzzle is solved, false otherwise
-  def solved?
-    solved = true
-    # check rows for duplicates
-    @puzzle.each do |row|
-      te = row.reject {|num| num == 0} # remove zeroes
-      solved = false if te.uniq.size != 9 # not valid if there are dupes
-    end
-
-    # check columns for duplicates
-    9.times do |i| # for columns 0 thru 8
-      col = [] # column
-      @puzzle.each {|row| col << row[i]} # fill column
-      col.reject! {|num| num == 0} # remove zeroes
-      solved = false if col.uniq.size != 9
-    end
-
-    # check boxes for duplicates
-    puz = []
-    puz << @puzzle[0][0, 3] + @puzzle[1][0, 3] + @puzzle[2][0, 3]
-    puz << @puzzle[0][3, 3] + @puzzle[1][3, 3] + @puzzle[2][3, 3]
-    puz << @puzzle[0][6, 3] + @puzzle[1][6, 3] + @puzzle[2][6, 3]
-    puz << @puzzle[3][0, 3] + @puzzle[4][0, 3] + @puzzle[5][0, 3]
-    puz << @puzzle[3][3, 3] + @puzzle[4][3, 3] + @puzzle[5][3, 3]
-    puz << @puzzle[3][6, 3] + @puzzle[4][6, 3] + @puzzle[5][6, 3]
-    puz << @puzzle[6][0, 3] + @puzzle[7][0, 3] + @puzzle[8][0, 3]
-    puz << @puzzle[6][3, 3] + @puzzle[7][3, 3] + @puzzle[8][3, 3]
-    puz << @puzzle[6][6, 3] + @puzzle[7][6, 3] + @puzzle[8][6, 3]
-
-    puz.each do |box|
-      box.reject! {|num| num == 0} # remove zeroes
-      solved = false if box.uniq.size != 9
-    end
-
-    return solved
-  end
-=end
-
 end
