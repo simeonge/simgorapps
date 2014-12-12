@@ -45,7 +45,7 @@ var sload = function() {
     $("#puzzle").val(puz); // add to hidden input field
   });
 
-  // upon ajax success, solved puzzle will be populated into UI grid
+  // on ajax success, solved puzzle will be populated into UI grid
   $("#sform").bind("ajax:success", function(xhr, data, status) {
     $("#puzzle").val(data["sl"]); // retrieve from hidden input field
     $("td div input").each(function(index) {
@@ -53,9 +53,9 @@ var sload = function() {
     });
   });
 
-  // TODO on ajax error, display error message to user
+  // on ajax error, display error message to user
   $("#sform").bind("ajax:error", function(xhr, data, status) {
-    alert(data["er"]);
+    alert("Something went wrong! Please make sure the puzzle you have entered is valid.");
   });
 };
 
