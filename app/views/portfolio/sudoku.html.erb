@@ -3,7 +3,7 @@
     <h1>Sudoku Solver</h1>
     <h2>Sudoku Solver written in Ruby</h2>
     <br>
-    <p>This project is written in Ruby and implements a solver for the Sudoku puzzle using the brute-force algorithm. Please view the Github repository for documentation and source code.</p>
+    <p>This project is written in Ruby and implements a solver for the Sudoku puzzle using the brute-force algorithm. The source code is available on GitHub.</p>
     <p class="text-center">
       <%= link_to 'View source', "https://github.com/simeonge/simgorapps/blob/master/lib/sudoku_solver.rb", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
       <!--<a type="button" class="btn btn-lg btn-info">Demo</a>-->
@@ -11,15 +11,14 @@
   </div>
 </div>
 <div class="container">
-  <h4>Click Easy or Difficult to populate grid with a sample puzzle.</h4>
-  <h4>Click Edge case to populate grid with the puzzle considered to be the worse case when solving with the brute-force algorithm. Note: solving may take a couple minutes.</h4>
+  <h4>Click Easy, Medium, or Difficult to populate grid with a sample puzzle.</h4>
   <h4>Click Clear grid to clear the grid and enter your own puzzle.</h4>
   <h4>Click Solve to run the algorithm and solve the puzzle. Despite some drawbacks, advantages of the brute-force algorithm are that the degree of difficulty does not affect the time it takes for the algorithm to solve the puzzle, and that a solution is guaranteed for every valid puzzle.</h4>
   <h2 class="text-center">Choose sudoku puzzle</h2>
   <p class="text-center">
     <a id="ez" type="button" class="btn btn-lg btn-primary">Easy</a>
-    <a id="df" type="button" class="btn btn-lg btn-warning">Difficult</a>
-    <a id="ec" type="button" class="btn btn-lg btn-danger">Edge case</a>
+    <a id="md" type="button" class="btn btn-lg btn-warning">Medium</a>
+    <a id="df" type="button" class="btn btn-lg btn-danger">Difficult</a>
     <a id="cg" type="button" class="btn btn-lg btn-info">Clear grid</a>
   </p>
   <table class="table table-bordered">
