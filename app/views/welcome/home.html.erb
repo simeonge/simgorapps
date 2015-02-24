@@ -1,6 +1,241 @@
-    <!-- main jumbotron to sell myself -->
+<div class="container" id="about">
+  <div class="jumbotron">
+    <h1 class="text-center">Welcome to my website</h1>
+    <p>I am a developer living in Chicago, IL. My interests are web and mobile development. Scroll down to view my projects.</p>
+  </div>
+</div>
+
+<div class="container" id="portfolio">
+  <h2>Portfolio</h2>
+</div>
+<hr />
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="jumbotron tile">
+        <h1>Coin</h1>
+        <p>Android app for tracking expenses</p>
+	<p class="text-center">
+      <%= link_to 'View source', "https://github.com/simeonge/expensereport", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
+      <a type="button" href="https://play.google.com/store/apps/details?id=com.simgeoapps.expensereport" target="_blank">
+	<img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
+      </a>
+    </p>
+    <p class="attributions">Google Play is a trademark of Google Inc.</p>
+      </div>
+    </div> <!-- col -->
+    <div class="col-md-6">
+      <div class="jumbotron tile">
+        <h1>Sudoku Solver</h1>
+        <p>Written in Ruby</p>
+	<p class="text-center">
+	  <%= link_to 'View source', "https://github.com/simeonge/simgorapps/blob/master/lib/sudoku_solver.rb", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
+	  <a type="button" class="btn btn-lg btn-info" id="sudokuOverlay">Demo</a>
+	</p>
+	<p class="attributions">a</p>
+      </div>
+    </div> <!-- col -->
+    <div class="smodal">
+      <div class="scntr">
+      <h2 class="text-center">Choose sudoku puzzle</h2>
+  <p class="text-center">
+    <a id="ez" type="button" class="btn btn-lg btn-primary">Easy</a>
+    <a id="md" type="button" class="btn btn-lg btn-warning">Medium</a>
+    <a id="df" type="button" class="btn btn-lg btn-danger">Difficult</a>
+    <a id="cg" type="button" class="btn btn-lg btn-info">Clear grid</a>
+  </p>
+  <table class="table table-bordered">
+    <tbody>
+      <tr>
+	<td class="tb lb"><div><input maxlength="1" /></div></td>
+	<td class="tb"><div><input maxlength="1" /></div></td>
+	<td class="tb rb"><div><input maxlength="1" /></div></td>
+	<td class="tb"><div><input maxlength="1" /></div></td>
+	<td class="tb"><div><input maxlength="1" /></div></td>
+	<td class="tb rb"><div><input maxlength="1" /></div></td>
+	<td class="tb"><div><input maxlength="1" /></div></td>
+	<td class="tb"><div><input maxlength="1" /></div></td>
+	<td class="tb rb"><div><input maxlength="1" /></div></td>
+      </tr>
+      <tr>
+	<td class="lb"><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td class="rb"><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td class="rb"><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td class="rb"><div><input maxlength="1" /></div></td>
+      </tr>
+      <tr>
+	<td class="lb bb"><div><input maxlength="1" /></div></td>
+	<td class="bb"><div><input maxlength="1" /></div></td>
+	<td class="bb rb"><div><input maxlength="1" /></div></td>
+	<td class="bb"><div><input maxlength="1" /></div></td>
+	<td class="bb"><div><input maxlength="1" /></div></td>
+	<td class="bb rb"><div><input maxlength="1" /></div></td>
+	<td class="bb"><div><input maxlength="1" /></div></td>
+	<td class="bb"><div><input maxlength="1" /></div></td>
+	<td class="bb rb"><div><input maxlength="1" /></div></td>
+      </tr>
+      <tr>
+	<td class="lb"><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td class="rb"><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td class="rb"><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td class="rb"><div><input maxlength="1" /></div></td>
+      </tr>
+      <tr>
+	<td class="lb"><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td class="rb"><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td class="rb"><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td class="rb"><div><input maxlength="1" /></div></td>
+      </tr>
+      <tr>
+	<td class="lb bb"><div><input maxlength="1" /></div></td>
+	<td class="bb"><div><input maxlength="1" /></div></td>
+	<td class="rb bb"><div><input maxlength="1" /></div></td>
+	<td class="bb"><div><input maxlength="1" /></div></td>
+	<td class="bb"><div><input maxlength="1" /></div></td>
+	<td class="rb bb"><div><input maxlength="1" /></div></td>
+	<td class="bb"><div><input maxlength="1" /></div></td>
+	<td class="bb"><div><input maxlength="1" /></div></td>
+	<td class="rb bb"><div><input maxlength="1" /></div></td>
+      </tr>
+      <tr>
+	<td class="lb"><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td class="rb"><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td class="rb"><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td class="rb"><div><input maxlength="1" /></div></td>
+      </tr>
+      <tr>
+	<td class="lb"><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td class="rb"><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td class="rb"><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td><div><input maxlength="1" /></div></td>
+	<td class="rb"><div><input maxlength="1" /></div></td>
+      </tr>
+      <tr>
+	<td class="lb bb"><div><input maxlength="1" /></div></td>
+	<td class="bb"><div><input maxlength="1" /></div></td>
+	<td class="rb bb"><div><input maxlength="1" /></div></td>
+	<td class="bb"><div><input maxlength="1" /></div></td>
+	<td class="bb"><div><input maxlength="1" /></div></td>
+	<td class="rb bb"><div><input maxlength="1" /></div></td>
+	<td class="bb"><div><input maxlength="1" /></div></td>
+	<td class="bb"><div><input maxlength="1" /></div></td>
+	<td class="rb bb"><div><input maxlength="1" /></div></td>
+      </tr>
+    </tbody>
+  </table>
+  <form accept-charset="UTF-8" action="/portfolio/sudoku" data-remote="true" method="post" id="sform">
+  <p class="text-center">
+    <input type="hidden" id="puzzle" name="puzzle" />
+    <input type="submit" value="Solve!" id="slv" class="btn btn-lg btn-success" />
+  </p>
+  </form>
+  </div>
+    </div>
+  </div> <!-- row -->
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="jumbotron tile">
+        <h1>Interpreter</h1>
+        <p>Written in Java</p>
+	<p class="text-center">
+	  <%= link_to 'View source', "https://github.com/simeonge/coreinterpreter", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
+	</p>
+      </div>
+    </div> <!-- col -->
+    <div class="col-md-6">
+      <div class="jumbotron tile">
+        <h1>Calculator</h1>
+        <p>Written in Javascript</p>
+	<p class="text-center">
+	  <%= link_to 'View source', "https://github.com/simeonge/cse3901lab4/tree/master/calculator", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
+	  <a type="button" class="btn btn-lg btn-info" id="calcOverlay">Use</a>
+	</p>
+      </div>
+    </div> <!-- col -->
+    <div class="coverlay"></div>
+    <div class="cmodal">
+      <div id="grp">
+      <br>
+      <h1>Calculator</h1>
+      <div>
+	<input readonly="readonly" size="16" id="in" />
+        <br>
+	<br>
+	<table>
+	  <tr>
+	    <td><button type="button" id="mc" name="mem">MC</button></td>
+	    <td><button type="button" id="mr" name="mem">MR</button></td>
+	    <td id="ind"><button type="button" id="ms" name="mem">MS</button></td>
+	    <td><button type="button" id="m+" name="mem">M+</button></td>
+	    <td><button type="button" id="m-" name="mem">M-</button></td>
+	  </tr>
+	  <tr>
+	    <td><button type="button" id="7" name="num">7</button></td>
+	    <td><button type="button" id="8" name="num">8</button></td>
+	    <td><button type="button" id="9" name="num">9</button></td>
+	    <td><button type="button" id="/" name="op">/</button></td>
+	    <td><button type="button" id="c" name="clr">C</button></td>
+	  </tr>
+	  <tr>
+	    <td><button type="button" id="4" name="num">4</button></td>
+	    <td><button type="button" id="5" name="num">5</button></td>
+	    <td><button type="button" id="6" name="num">6</button></td>
+	    <td><button type="button" id="*" name="op">*</button></td>
+	    <td><button type="button" id="ce" name="clr">CE</button></td>
+	  </tr>
+	  <tr>
+	    <td><button type="button" id="1" name="num">1</button></td>
+	    <td><button type="button" id="2" name="num">2</button></td>
+	    <td><button type="button" id="3" name="num">3</button></td>
+	    <td><button type="button" id="-" name="op">-</button></td>
+	    <td rowspan="2"><button type="button" id="ent">=</button></td>
+	  </tr>
+	  <tr>
+	    <td colspan="2"><button type="button" name="num" id="nil">0</button></td>
+	    <td><button type="button" id=".">.</button></td>
+	    <td><button type="button" id="+" name="op">+</button></td>
+	  </tr>
+	</table>
+      </div>
+    </div>
+  </div> <!-- row -->
+</div>    
+
+<div class="container" id="contact">
+  <h2>Contact</h2>
+</div>
+<hr />
+
     <div class="container">
-      <div class="jumbotron">
+      <div class="jumbotron" id="third">
         <h1 class="text-center">Welcome to my website</h1>
         <p>Click below to learn more about me or view my portfolio.</p>
 	<p class="text-center">
@@ -9,3 +244,5 @@
 	</p>
       </div>
     </div>
+
+<%= javascript_include_tag 'calculator' %>

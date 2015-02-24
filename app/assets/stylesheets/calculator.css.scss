@@ -1,9 +1,3 @@
-// Place all the styles related to the Calculator controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
-
-/* CSE 3901 Lab 4 Part 2 - Calculator
-   Stylesheet */
 
 div#grp { /* div that encompases everything */
     width: 350px;
@@ -53,10 +47,6 @@ input { /* Box that displays numbers and results */
     text-align: right;
     background: white;
     border-radius: 5px;
-}
-
-p { /* Sets the size of "By ... " signature at the bottom */
-    font-size: 12px;
 }
 
 p a.btn { /* Set padding for buttons */

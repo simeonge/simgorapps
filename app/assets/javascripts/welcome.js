@@ -1,5 +1,20 @@
-// Place all the behaviors and hooks related to the matching controller here.
-// All this logic will automatically be available in application.js.
-// You can use CoffeeScript... NOT... in this file: http:coffeescript.org
+var homeLoad = function() {
+  $("#calcOverlay").click(function() {
+    $(".coverlay").fadeIn(200);
+    $(".cmodal").fadeIn(200);
+  });
 
-// Add your javascript here
+  $("#sudokuOverlay").click(function() {
+    $(".coverlay").fadeIn(200);
+    $(".smodal").fadeIn(200);
+  });
+
+  $(".coverlay").click(function() {
+    $(".coverlay").fadeOut(200);
+    $(".cmodal").fadeOut(200);
+    $(".smodal").fadeOut(200);
+  });
+};
+
+$(document).ready(homeLoad); // for regular page load
+$(document).on('page:load', homeLoad); // for turbolink
