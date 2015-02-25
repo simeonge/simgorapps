@@ -4,10 +4,14 @@
 
 html, body {
   min-height: 100%;
+  
 }
 
 body {
   position: relative;
+  background-image: url("/assets/Elegant_Background-2.jpg");
+
+  background-attachment: fixed;
 }
 
 /* background overlay */
@@ -39,7 +43,36 @@ body {
   position: absolute; /* to allow scrolling since grid is too big */
   top: 50%; 
   left: 50%;
-  margin-top: -500px; /* to center vertically */
-  margin-left: -300px; /* to center horizontally */
+  margin-top: -400px;
+  margin-left: -300px;
   z-index: 11; /* 1px higher than the overlay layer */
 }
+
+/* about section*/
+.main {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* portfolio tiles */
+.tile {
+  background-color: white;
+  opacity: .8;
+  transition: opacity .2s ease-out;
+  -moz-transition: opacity .2s ease-out;
+  -webkit-transition: opacity .2s ease-out;
+  -o-transition: opacity .2s ease-out;
+}
+
+.tile:hover {
+  opacity: 1;
+}
+
+.footer {
+  background-color: rgba(0, 0, 0, 0.0);
+}
+
+/* footer contact section images*/
+a img {
+  padding: 10px;
+}
+

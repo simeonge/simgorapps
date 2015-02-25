@@ -1,7 +1,9 @@
 <div class="container" id="about">
-  <div class="jumbotron">
-    <h1 class="text-center">Welcome to my website</h1>
-    <p>I am a developer living in Chicago, IL. My interests are web and mobile development. Scroll down to view my projects.</p>
+  <div class="jumbotron main">
+    <br />
+    <h1>Welcome</h1>
+    <p>I am a developer living in Chicago, IL. My interests are web and mobile development.</p>
+    <p>I have experience with Android, Ruby on Rails, as well as test automation.</p>
   </div>
 </div>
 
@@ -17,12 +19,11 @@
         <h1>Coin</h1>
         <p>Android app for tracking expenses</p>
 	<p class="text-center">
-      <%= link_to 'View source', "https://github.com/simeonge/expensereport", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
+      <%= link_to 'View on GitHub', "https://github.com/simeonge/expensereport", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
       <a type="button" href="https://play.google.com/store/apps/details?id=com.simgeoapps.expensereport" target="_blank">
 	<img alt="Get it on Google Play" src="https://developer.android.com/images/brand/en_generic_rgb_wo_60.png" />
       </a>
     </p>
-    <p class="attributions">Google Play is a trademark of Google Inc.</p>
       </div>
     </div> <!-- col -->
     <div class="col-md-6">
@@ -30,10 +31,9 @@
         <h1>Sudoku Solver</h1>
         <p>Written in Ruby</p>
 	<p class="text-center">
-	  <%= link_to 'View source', "https://github.com/simeonge/simgorapps/blob/master/lib/sudoku_solver.rb", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
+	  <%= link_to 'View on GitHub', "https://github.com/simeonge/simgorapps/blob/master/lib/sudoku_solver.rb", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
 	  <a type="button" class="btn btn-lg btn-info" id="sudokuOverlay">Demo</a>
 	</p>
-	<p class="attributions">a</p>
       </div>
     </div> <!-- col -->
     <div class="smodal">
@@ -166,7 +166,7 @@
         <h1>Interpreter</h1>
         <p>Written in Java</p>
 	<p class="text-center">
-	  <%= link_to 'View source', "https://github.com/simeonge/coreinterpreter", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
+	  <%= link_to 'View on GitHub', "https://github.com/simeonge/coreinterpreter", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
 	</p>
       </div>
     </div> <!-- col -->
@@ -175,7 +175,7 @@
         <h1>Calculator</h1>
         <p>Written in Javascript</p>
 	<p class="text-center">
-	  <%= link_to 'View source', "https://github.com/simeonge/cse3901lab4/tree/master/calculator", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
+	  <%= link_to 'View on GitHub', "https://github.com/simeonge/cse3901lab4/tree/master/calculator", class: "btn btn-lg btn-info", type: "button", data: {no_turbolink: true}, target: "_blank" %>
 	  <a type="button" class="btn btn-lg btn-info" id="calcOverlay">Use</a>
 	</p>
       </div>
@@ -227,22 +227,37 @@
       </div>
     </div>
   </div> <!-- row -->
-</div>    
+</div></div>   
 
 <div class="container" id="contact">
-  <h2>Contact</h2>
+  <h2>Contact me</h2>
 </div>
 <hr />
 
-    <div class="container">
-      <div class="jumbotron" id="third">
-        <h1 class="text-center">Welcome to my website</h1>
-        <p>Click below to learn more about me or view my portfolio.</p>
+<div class="container">
+  <div class="jumbotron footer">
+    <footer>
+      <div class="container">
+	<p>Please feel free to drop me an email, download my resume, or browse my profiles.</p>
+	<br />
 	<p class="text-center">
-	  <a class="btn btn-primary btn-lg" href="/about/resume">About me</a>
-	  <a class="btn btn-primary btn-lg" href="/about/portfolio">View portfolio</a>
+	<a href="mailto:s.georgiev.27@gmail.com" class="ftrcns" target="_blank"><img src="/assets/email64px.png" /></a>
+	<a href="/SimeonGeorgievResume.pdf" class="ftrcns" target="_blank"><img src="/assets/resume64.png" /></a>
+	<a href="https://github.com/simeonge" class="ftrcns" target="_blank"><img src="/assets/GitHub-Mark-64px.png" /></a>
+	<a href="https://careers.stackoverflow.com/simeongeorgiev" class="ftrcns" target="_blank"><img src="/assets/careers-icon64px.png" /></a>
+	<a href="https://www.linkedin.com/pub/simeon-georgiev/5a/688/a53/" class="ftrcns" target="_blank"><img src="/assets/InBug-60px-R.png" /></a>
 	</p>
       </div>
-    </div>
+    </footer>
+  </div>
+</div>
+
+<hr />
+<div class="container">
+  <p class="text-center attributions">Developed by Simeon Georgiev. <a href="https://github.com/simeonge/simgorapps" target="_blank">View GitHub repo of this site.</a><br />Google Play is a trademark of Google Inc.
+  </p>
+</div>
+<div class="jumbotron footer"></div>
+<div class="jumbotron footer"></div>
 
 <%= javascript_include_tag 'calculator' %>
