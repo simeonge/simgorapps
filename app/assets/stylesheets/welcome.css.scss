@@ -9,7 +9,7 @@ html, body {
 
 body {
   position: relative;
-  background-image: url("/assets/Elegant_Background-2.jpg");
+  background-image: url("/assets/Elegant_Background-8.jpg");
 
   background-attachment: fixed;
 }
@@ -41,16 +41,16 @@ body {
 .smodal {
   display: none;
   position: absolute; /* to allow scrolling since grid is too big */
-  top: 50%; 
+  top: 5%; 
   left: 50%;
-  margin-top: -400px;
+  margin-top: 0px;
   margin-left: -300px;
   z-index: 11; /* 1px higher than the overlay layer */
 }
 
 /* about section*/
 .main {
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 /* portfolio tiles */
@@ -68,6 +68,10 @@ body {
 }
 
 .footer {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+.spc {
   background-color: rgba(0, 0, 0, 0.0);
 }
 
@@ -76,3 +80,7 @@ a img {
   padding: 10px;
 }
 
+/* white text */
+.contrast {
+  color: white;
+}

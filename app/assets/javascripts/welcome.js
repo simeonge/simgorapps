@@ -9,7 +9,7 @@ var homeLoad = function() {
     $(".coverlay").fadeIn(200);
     $(".smodal").fadeIn(200);
     $('html, body').animate({
-        scrollTop: $("#portfolio").offset().top - 50
+        scrollTop: 0
     }, 800);
   });
 
