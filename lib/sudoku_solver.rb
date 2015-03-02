@@ -11,6 +11,7 @@ class SudokuSolver
     @puzzle = Array.new 9 # array of size 9
     @puzzle.fill {|i| i = []} # array of 9 (initially) empty arrays
     @errorm = ""
+    @first_e = -1 # index of the first empty cell
   end
   
   # Parses the input and produces a two-dimensional array representing the puzzle
@@ -44,6 +45,7 @@ class SudokuSolver
     if !solved? # if not yet solved
       empty = grid.find_index {|i| i == 0} # get first empty      
       nums = row_nums(empty) & col_nums(empty) & reg_nums(empty) # get poss. digits for empty
+      @first_e = empty if @first_e == -1
 
       # iterate recursively through all empties and all possible digits for each empty
       # this tries all possible options, backtracking if the next square has no possible numbers
@@ -58,11 +60,18 @@ class SudokuSolver
         if  !solved?
           # if not solved after last number entered, previous entries are wrong
           # setting empty to 0 will force method to backtrack and recur again w/ diff. combination
-          grid[empty] = 0 if index == nums.size-1
+          if index == nums.size-1
+            grid[empty] = 0
+            # if we are back at the first empty cell and have exhausted all possible values, then the puzzle has no solution
+            if @first_e == empty
+              @errorm = "This puzzle has no solution."
+              abort "Invalid input"
+            end
+          end
         else
           return # solution found; exit method
         end
-      end # end block
+      end # end nums block
     end # end if
   end
 
@@ -176,6 +185,8 @@ class SudokuSolver
       box.reject! {|num| num == 0} # remove zeroes
       valid = false if box.uniq.size != box.size # check dupes
     end
+
+    # nums = row_nums(empty) & col_nums(empty) & reg_nums(empty)
 
     return valid
   end

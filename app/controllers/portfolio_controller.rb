@@ -6,7 +6,7 @@ class PortfolioController < ApplicationController
         @solver.parse!
         @solver.solve!
       rescue
-        puts "oeriohe"
+        puts "error"
       end
 
       # return solution as json
