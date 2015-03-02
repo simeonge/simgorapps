@@ -1,11 +1,10 @@
-<h2>Simeon's Portolio Site</h2>
-<h3>This website showcases my personal development projects.</h3>
+= Simeon's Portolio Site
+== This website showcases my personal development projects.
 
-<h3>Stack</h3>
+Stack
 
-<p>Bootstrap</p>
-<p>jQuery</p>
-<p>Ruby 2.1.2</p>
-<p>Rails 4.1.1</p>
-<p>Heroku</p>
-
+* Bootstrap
+* jQuery
+* Ruby 2.1.2
+* Rails 4.1.1
+* Heroku
