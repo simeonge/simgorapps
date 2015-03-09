@@ -1,4 +1,16 @@
 var homeLoad = function() {
+  // custome greeting
+  var t = new Date().getHours();
+  var greet = "";
+  if (t > 18) {
+    greet = "Good evening";
+  } else if (t > 12) {
+    greet = "Good afternoon";
+  } else {
+    greet = "Good morning";
+  }
+  $("h1#greeting").text(greet);
+
   // handlers for modals
   $("#calcOverlay").click(function() {
     $(".coverlay").fadeIn(200);

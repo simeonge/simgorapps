@@ -1,21 +1,21 @@
 Rails.application.routes.draw do
-  get 'portfolio/sudoku'
+  # get 'portfolio/sudoku'
 
   post 'portfolio/sudoku'
 
-  get 'portfolio/expense'
+  # get 'portfolio/expense'
 
-  get 'portfolio/interpreter'
+  # get 'portfolio/interpreter'
 
-  get 'about/resume'
+  # get 'about/resume'
 
-  get 'about/contact'
+  # get 'about/contact'
 
-  get 'about/portfolio'
+  # get 'about/portfolio'
 
-  get 'welcome/home'
+  # get 'welcome/home'
 
-  get 'calculator/calc'
+  # get 'calculator/calc'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
