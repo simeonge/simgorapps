@@ -2,9 +2,9 @@ var homeLoad = function() {
   // custome greeting
   var t = new Date().getHours();
   var greet = "";
-  if (t > 18) {
+  if (t > 17) {
     greet = "Good evening";
-  } else if (t > 12) {
+  } else if (t > 11) {
     greet = "Good afternoon";
   } else {
     greet = "Good morning";

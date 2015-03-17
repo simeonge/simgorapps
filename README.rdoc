@@ -8,3 +8,11 @@ Stack
 * Ruby 2.1.2
 * Rails 4.1.1
 * Heroku
+
+Site includes
+
+* GitHub links to select projects.
+* Link to my app on Google Play.
+* A Ruby sudoku solver. User can either enter their own puzzle, or choose one of the preset puzzles to be solved for demonstration.
+* A calculator.
+* Sections for About me and contact information that includes links to my profile on external sites.
